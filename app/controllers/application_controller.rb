@@ -14,7 +14,9 @@ class ApplicationController < ActionController::Base
     if user_signed_in?
       super
     else
-      redirect_to not_logged_in_path
+      unless request.path == new_user_session_path || request.path == new_user_registration_path || request.path == new_user_password_path
+        redirect_to not_logged_in_path
+      end
     end
   end
 end

@@ -55,8 +55,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def not_logged_in
-  end
+  def not_logged_in; end
 
   private
 

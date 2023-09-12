@@ -42,10 +42,12 @@ class PurchasesController < ApplicationController
 
     respond_to do |format|
       if @purchase.save
-        format.html { redirect_to group_purchases_path(params[:group_id]), notice: 'Purchase was successfully created.' }
+        format.html do
+          redirect_to group_purchases_path(params[:group_id]), notice: 'Purchase was successfully created.'
+        end
         format.json { render :index, status: :created, location: @purchase }
       else
-        format.html { redirect_to new_group_purchase_path(params[:group_id]), alert: "Please, insert valid values." }
+        format.html { redirect_to new_group_purchase_path(params[:group_id]), alert: 'Please, insert valid values.' }
         format.json { render json: @purchase.errors, status: :unprocessable_entity }
       end
     end

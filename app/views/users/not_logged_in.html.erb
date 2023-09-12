@@ -1,1 +1,7 @@
-<h1>Logueate peton</h1>
+<div class="login-container">
+  <%= image_tag 'icon-app.png', alt: 'CategorEASE', class: "home-logo"%>
+  <div class="log-buttons">
+    <%= link_to "Log in", new_user_session_path, class: "login-button logged-button" %>
+    <%= link_to "Sign up", new_user_registration_path, class: "signup-button logged-button" %>
+  </div>
+</div>

@@ -1,9 +1,3 @@
-<h1>New purchase</h1>
+<h1 class="form-title">NEW PURCHASE</h1>
 
-<%= render "form", purchase: @purchase %>
-
-<br>
-
-<div>
-  <%= link_to "Back to purchases", purchases_path %>
-</div>
+<%= render "form", purchase: @purchase, available_groups: @available_groups, group: @group %>

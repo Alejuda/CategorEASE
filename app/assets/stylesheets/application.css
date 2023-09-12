@@ -32,6 +32,7 @@ form {
   width: 100%;
   background-color: white;
   padding: 20px 10px 20px 20px;
+  margin-bottom: 10px;
 }
 
 body {
@@ -155,6 +156,21 @@ select {
 input[type="checkbox"] {
   width: auto;
   margin-right: 10px;
+}
+
+.field > label {
+  color: #b6b4b4;
+}
+
+.disp-none {
+  display: none;
+}
+
+.devise-link {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #60b524;
 }
 
 /* ----------- end ------------- */

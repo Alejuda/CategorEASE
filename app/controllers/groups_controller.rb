@@ -3,21 +3,22 @@ class GroupsController < ApplicationController
 
   # GET /groups or /groups.json
   def index
-    @groups = Group.all
+    @groups = current_user.groups
   end
 
-  # GET /groups/1 or /groups/1.json
-  def show
-  end
+  # # GET /groups/1 or /groups/1.json
+  # def show
+  # end
 
   # GET /groups/new
   def new
     @group = Group.new
+    @group.user = current_user
   end
 
   # GET /groups/1/edit
-  def edit
-  end
+  # def edit
+  # end
 
   # POST /groups or /groups.json
   def create
@@ -25,8 +26,8 @@ class GroupsController < ApplicationController
 
     respond_to do |format|
       if @group.save
-        format.html { redirect_to group_url(@group), notice: "Group was successfully created." }
-        format.json { render :show, status: :created, location: @group }
+        format.html { redirect_to groups_url, notice: 'Group was successfully created.' }
+        format.json { render :index, status: :created, location: @group }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @group.errors, status: :unprocessable_entity }
@@ -34,28 +35,28 @@ class GroupsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /groups/1 or /groups/1.json
-  def update
-    respond_to do |format|
-      if @group.update(group_params)
-        format.html { redirect_to group_url(@group), notice: "Group was successfully updated." }
-        format.json { render :show, status: :ok, location: @group }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @group.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # # PATCH/PUT /groups/1 or /groups/1.json
+  # def update
+  #   respond_to do |format|
+  #     if @group.update(group_params)
+  #       format.html { redirect_to group_url(@group), notice: "Group was successfully updated." }
+  #       format.json { render :show, status: :ok, location: @group }
+  #     else
+  #       format.html { render :edit, status: :unprocessable_entity }
+  #       format.json { render json: @group.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
-  # DELETE /groups/1 or /groups/1.json
-  def destroy
-    @group.destroy
+  # # DELETE /groups/1 or /groups/1.json
+  # def destroy
+  #   @group.destroy
 
-    respond_to do |format|
-      format.html { redirect_to groups_url, notice: "Group was successfully destroyed." }
-      format.json { head :no_content }
-    end
-  end
+  #   respond_to do |format|
+  #     format.html { redirect_to groups_url, notice: "Group was successfully destroyed." }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

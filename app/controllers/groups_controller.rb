@@ -4,7 +4,7 @@ class GroupsController < ApplicationController
   # GET /groups or /groups.json
   def index
     return if current_user.nil?
-   
+
     @groups = current_user.groups
   end
 

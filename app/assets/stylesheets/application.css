@@ -243,3 +243,63 @@ input[type="checkbox"] {
 }
 
 /* ----------- end ------------- */
+
+/* ----------- NAVBAR ------------- */
+
+.nav-container {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(to bottom, #3878c2, #2d609b);
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 500px;
+}
+
+.nav-title {
+  color: white;
+  font-size: 17px;
+  font-weight: 400;
+  text-align: center;
+  flex: 0;
+}
+
+.nav-text {
+  color: white;
+  flex: 1; 
+  text-align: end;
+}
+
+.nav-icon-container {
+  text-align: start;
+  flex: 1;
+}
+
+.nav-icon {
+  height: 14px;
+}
+
+.nav-button {
+  border: none;
+  background-color: transparent;
+  text-align: end;
+  color: white;
+}
+
+form[method="post"].button_to {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  flex: 1; 
+  display: flex;
+  justify-content: end;
+}
+
+/* ----------- end ------------- */

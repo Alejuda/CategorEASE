@@ -1,0 +1,27 @@
+<header class="nav-container">
+  <nav class="nav">
+
+    <% if controller_name == 'groups' && action_name != "index" %>
+      <%= link_to groups_path, class: "nav-icon-link" do %>
+        <%= image_tag 'icons/back.svg', alt: 'Go back', class: "nav-icon"%>
+      <% end %>
+      <h2 class="nav-title">CATEGORIES</h2>
+      <p class="nav-text">Next</p>
+    <% end %>
+
+    <% if controller_name == 'groups' && action_name == "index" %>
+      <%= image_tag 'icons/menu.svg', alt: 'Menu', class: "nav-icon"%>
+      <h2 class="nav-title">CATEGORIES</h2>
+      <%= image_tag 'icons/search.svg', alt: 'Search', class: "nav-icon"%>
+    <% end %>
+
+    <% if controller_name == 'entities' %>
+      <%= link_to groups_path, class: "nav-icon-link" do %>
+        <%= image_tag 'icons/back.svg', alt: 'Go back', class: "nav-icon"%>
+      <% end %>
+      <h2 class="nav-title">TRANSACTIONS</h2>
+      <%= image_tag 'icons/search.svg', alt: 'Search', class: "nav-icon"%>
+    <% end %>
+
+  </nav>
+</header>

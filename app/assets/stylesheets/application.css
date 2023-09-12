@@ -158,7 +158,12 @@ input[type="checkbox"] {
   margin-right: 10px;
 }
 
-.field > label {
+.field {
+  display: flex;
+  align-items: center;
+}
+
+.field > * {
   color: #b6b4b4;
 }
 
@@ -171,6 +176,10 @@ input[type="checkbox"] {
   width: 100%;
   text-align: center;
   color: #60b524;
+}
+.alert {
+  color: red;
+  text-align: center;
 }
 
 /* ----------- end ------------- */

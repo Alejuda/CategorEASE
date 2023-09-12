@@ -26,7 +26,18 @@ class PurchasesController < ApplicationController
   # POST /purchases or /purchases.json
   def create
     @purchase = Purchase.new(purchase_params)
-    @group = Group.find(params[:group_id])
+    @groups = current_user.groups
+
+    @associated_groups = params[:purchase][:group_ids]
+
+    if @associated_groups.nil?
+      redirect_to new_group_purchase_path(params[:group_id]),  alert: 'You should select at least one group.'
+      return
+    end
+
+    @associated_groups.each do |group|
+      @purchase.groups << @groups.find { |g| g.id == group.to_i }
+    end
 
     respond_to do |format|
       if @purchase.save
@@ -71,6 +82,6 @@ class PurchasesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def purchase_params
-    params.require(:purchase).permit(:name, :amount, :author_id)
+    params.require(:purchase).permit(:name, :amount, :author_id, :group_ids)
   end
 end

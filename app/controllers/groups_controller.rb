@@ -13,7 +13,7 @@ class GroupsController < ApplicationController
   # GET /groups/new
   def new
     @group = Group.new
-    @group.user = current_user
+    @group.author = current_user
   end
 
   # GET /groups/1/edit

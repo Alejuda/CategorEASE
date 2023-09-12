@@ -1,17 +1,10 @@
-<div id="<%= dom_id group %>">
-  <p>
-    <strong>Name:</strong>
-    <%= group.name %>
-  </p>
+<%= link_to group_purchases_path(group), class: "group-link-container" do %>
+  <div id="<%= dom_id group %>" class="group-container">
+    <%= image_tag group.icon, alt: "Group Icon", class: "group-icon" %>
+  
+    <h3 class="group-name"><%= group.name %></h3>
 
-  <p>
-    <strong>Icon:</strong>
-    <%= group.icon %>
-  </p>
+    <h2 class="group-total">$<%= group.total_amount %></h2>
 
-  <p>
-    <strong>Author:</strong>
-    <%= group.author_id %>
-  </p>
-
-</div>
+  </div>
+<% end %>

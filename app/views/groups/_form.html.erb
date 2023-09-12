@@ -1,32 +1,31 @@
 <%= form_with(model: group) do |form| %>
   <% if group.errors.any? %>
-    <div style="color: red">
+    <div class="error-container" style="color: red">
       <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
 
       <ul>
         <% group.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+          <li>* <%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
+    <div class="divisor"></div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="input-container">
+    <%= form.label :name, style: "display: none" %>
+    <%= form.text_field :name, placeholder: "CATEGORY NAME" %>
   </div>
-
-  <div>
-    <%= form.label :icon, style: "display: block" %>
-    <%= form.text_field :icon %>
+  <div class="divisor"></div>
+  <div class="input-container">
+    <%= form.label :icon, style: "display: none" %>
+    <%= form.text_field :icon, placeholder: "ICON URL" %>
   </div>
+  <div class="divisor"></div>
 
-  <div>
-    <%= form.label :author_id, style: "display: block" %>
-    <%= form.text_field :author_id %>
-  </div>
+  <%= form.hidden_field :user_id, value: group.author.id %>
 
-  <div>
-    <%= form.submit %>
+  <div class="input-container">
+    <%= form.submit "SAVE CATEGORY", class: "save-btn" %>
   </div>
 <% end %>

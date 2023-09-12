@@ -32,6 +32,7 @@ form {
   width: 100%;
   background-color: white;
   padding: 20px 10px 20px 20px;
+  margin-bottom: 10px;
 }
 
 body {
@@ -157,6 +158,31 @@ input[type="checkbox"] {
   margin-right: 10px;
 }
 
+.field {
+  display: flex;
+  align-items: center;
+}
+
+.field > * {
+  color: #b6b4b4;
+}
+
+.disp-none {
+  display: none;
+}
+
+.devise-link {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #60b524;
+}
+
+.alert {
+  color: red;
+  text-align: center;
+}
+
 /* ----------- end ------------- */
 
 /* ------- TRANSACTIONS --------- */
@@ -218,3 +244,103 @@ input[type="checkbox"] {
 }
 
 /* ----------- end ------------- */
+
+/* ----------- NAVBAR ------------- */
+
+.nav-container {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(to bottom, #3878c2, #2d609b);
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 500px;
+}
+
+.nav-title {
+  color: white;
+  font-size: 17px;
+  font-weight: 400;
+  text-align: center;
+  flex: 0;
+}
+
+.nav-text {
+  color: white;
+  flex: 1;
+  text-align: end;
+}
+
+.nav-icon-container {
+  text-align: start;
+  flex: 1;
+}
+
+.nav-icon {
+  height: 14px;
+}
+
+.nav-button {
+  border: none;
+  background-color: transparent;
+  text-align: end;
+  color: white;
+}
+
+form[method="post"].button_to {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  flex: 1;
+  display: flex;
+  justify-content: end;
+}
+
+/* ----------- end ------------- */
+
+.login-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 40px 20px;
+}
+
+.home-logo {
+  width: 100%;
+  max-width: 600px;
+}
+
+.log-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.logged-button {
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+  border-radius: 4px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.login-button {
+  background-color: #3878c2;
+  color: white;
+}
+
+.signup-button {
+  padding: 5px;
+  color: #545c66;
+}

@@ -1,11 +1,15 @@
-<p style="color: green; text-align: center;"><%= notice %></p>
+<% if current_user.nil? %>
+  <%= render 'shared/not_logged_in' %>
+<% else %>
+  <p style="color: green; text-align: center;"><%= notice %></p>
 
-<div id="groups">
-  <% @groups.each do |group| %>
-    <%= render group %>
-  <% end %>
-</div>
+  <div id="groups">
+    <% @groups.each do |group| %>
+      <%= render group %>
+    <% end %>
+  </div>
 
-<div class="button-container">
-<%= link_to "ADD NEW CATEGORY", new_group_path, class: "new-group-link create-button" %>
-</div>
+  <div class="button-container">
+    <%= link_to "ADD NEW CATEGORY", new_group_path, class: "new-group-link create-button" %>
+  </div>
+<% end %>

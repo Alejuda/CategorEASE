@@ -1,0 +1,39 @@
+<% unless current_user.nil?  %>
+<header class="nav-container">
+  <nav class="nav">
+
+    <% if controller_name == 'groups' && action_name != "index" %>
+      <div class="nav-icon-container">
+        <%= link_to groups_path, class: "nav-icon-link" do %>
+          <%= image_tag 'icons/back.svg', alt: 'Go back', class: "nav-icon"%>
+        <% end %>
+      </div>
+      <h2 class="nav-title">CATEGORIES</h2>
+      <p class="nav-text">Next</p>
+    <% end %>
+
+    <% if controller_name == 'groups' && action_name == "index" %>
+      <div class="nav-icon-container">
+        <%= image_tag 'icons/menu.svg', alt: 'Menu', class: "nav-icon"%>
+      </div>
+      <h2 class="nav-title">GROUPS</h2>
+      <% if user_signed_in? %>
+          <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-button" %>
+      <% end %>
+    <% end %>
+
+    <% if controller_name == 'purchases' %>
+      <div class="nav-icon-container">
+        <%= link_to groups_path, class: "nav-icon-link" do %>
+          <%= image_tag 'icons/back.svg', alt: 'Go back', class: "nav-icon"%>
+        <% end %>
+      </div>
+      <h2 class="nav-title">PURCHASES</h2>
+      <% if user_signed_in? %>
+        <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-button" %>
+      <% end %>
+    <% end %>
+
+  </nav>
+</header>
+<% end %>

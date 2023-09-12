@@ -1,5 +1,6 @@
 class PurchasesController < ApplicationController
   # before_action :set_purchase, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /purchases or /purchases.json
   def index
@@ -28,23 +29,23 @@ class PurchasesController < ApplicationController
     @purchase = Purchase.new(purchase_params)
     @groups = current_user.groups
 
-    @associated_groups = params[:purchase][:group_ids]
-
-    if @associated_groups.nil?
+    if params[:purchase][:group_ids].nil?
       redirect_to new_group_purchase_path(params[:group_id]), alert: 'You should select at least one group.'
       return
     end
 
-    @associated_groups.each do |group|
+    params[:purchase][:group_ids].each do |group|
       @purchase.groups << @groups.find { |g| g.id == group.to_i }
     end
 
     respond_to do |format|
       if @purchase.save
-        format.html { redirect_to groups_path, notice: 'Purchase was successfully created.' }
+        format.html do
+          redirect_to group_purchases_path(params[:group_id]), notice: 'Purchase was successfully created.'
+        end
         format.json { render :index, status: :created, location: @purchase }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { redirect_to new_group_purchase_path(params[:group_id]), alert: 'Please, insert valid values.' }
         format.json { render json: @purchase.errors, status: :unprocessable_entity }
       end
     end

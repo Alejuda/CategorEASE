@@ -31,7 +31,7 @@ class PurchasesController < ApplicationController
     @associated_groups = params[:purchase][:group_ids]
 
     if @associated_groups.nil?
-      redirect_to new_group_purchase_path(params[:group_id]),  alert: 'You should select at least one group.'
+      redirect_to new_group_purchase_path(params[:group_id]), alert: 'You should select at least one group.'
       return
     end
 

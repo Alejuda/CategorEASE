@@ -109,6 +109,7 @@ input,
 select {
   border: none;
   background-color: white;
+
   /* padding: 20px 0; */
   width: 100%;
 }

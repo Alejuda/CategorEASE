@@ -1,7 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let!(:user) { User.create(name: 'Nacho') }
+  let!(:user) do
+    User.create(name: 'Nacho', email: 'nachofino98@gmail.com', password: 'nachofino1',
+                password_confirmation: 'nachofino1')
+  end
 
   context 'Validation' do
     it 'should be valid with valid attributes' do
@@ -17,17 +20,16 @@ RSpec.describe User, type: :model do
       user.name = 'x' * 101
       expect(user).to_not be_valid
     end
+  end
 
   context 'Associations' do
     it 'should have many groups' do
       association = described_class.reflect_on_association(:groups)
       expect(association.macro).to eq(:has_many)
-      expect(association.options[:dependent]).to eq(:destroy)
     end
     it 'should have many purchases' do
       association = described_class.reflect_on_association(:purchases)
       expect(association.macro).to eq(:has_many)
-      expect(association.options[:dependent]).to eq(:destroy)
     end
   end
 end

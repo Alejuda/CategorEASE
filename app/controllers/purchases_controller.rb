@@ -29,14 +29,12 @@ class PurchasesController < ApplicationController
     @purchase = Purchase.new(purchase_params)
     @groups = current_user.groups
 
-    @associated_groups = params[:purchase][:group_ids]
-
-    if @associated_groups.nil?
+    if params[:purchase][:group_ids].nil?
       redirect_to new_group_purchase_path(params[:group_id]), alert: 'You should select at least one group.'
       return
     end
 
-    @associated_groups.each do |group|
+    params[:purchase][:group_ids].each do |group|
       @purchase.groups << @groups.find { |g| g.id == group.to_i }
     end
 

@@ -305,12 +305,12 @@ form[method="post"].button_to {
 /* ----------- end ------------- */
 
 .login-container {
-  height: 85vh;
+  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: end;
-  padding: 20px;
+  padding: 40px 20px;
 }
 
 .home-logo {

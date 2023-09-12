@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     resources :purchases, only: [:index, :new, :create]
   end
 
+  get '/not_logged_in', to: 'users#not_logged_in'
+
   root 'groups#index'
   # Defines the root path route ("/")
   # root "articles#index"

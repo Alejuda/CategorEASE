@@ -65,6 +65,12 @@ CategorEASE is a comprehensive mobile web application designed to simplify expen
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link](https://categorease.onrender.com/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## 💻 Getting Started <a name="getting-started"></a>
 
 ![ERD Budget app](https://github.com/microverseinc/curriculum-rails/blob/main/capstone/images/erd_diagram.png)

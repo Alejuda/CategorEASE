@@ -83,6 +83,4 @@ test:
 #
 production:
   <<: *default
-  database: CategorEASE_production
-  username: CategorEASE
-  password: <%= ENV["CATEGOREASE_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>

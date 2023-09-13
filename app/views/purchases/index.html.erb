@@ -1,0 +1,22 @@
+<div class="group-info">
+  <%= image_tag @group.icon, alt: "Group Icon", class: "info-icon" %>
+  
+  <h3 class="group-name"><%= @group.name %></h3>
+
+  <div class="info-total">
+    <h3 class="info-total-text">TOTAL</h3>
+    <h2 class="group-total">$<%= @group.total_amount %></h2>
+  </div>
+
+</div>
+
+<p style="color: green; text-align: center;"><%= notice %></p>
+
+<div id="purchases">
+  <% @purchases.each do |purchase| %>
+    <%= render purchase %>
+  <% end %>
+</div>
+<div class="button-container">
+  <%= link_to "NEW PURCHASE", new_group_purchase_path, class: "new-group-link create-button" %>
+</div>

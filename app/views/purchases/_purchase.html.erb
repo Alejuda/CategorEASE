@@ -1,0 +1,9 @@
+<div id="<%= dom_id purchase %>" class="purchase-container">
+  <p>Transaction N° <%= purchase.id %>: <strong><%= purchase.name %></strong></p>
+
+  <p class="lighter-text">Date: <%= purchase.formatted_date %></p>
+
+  <div class="divisor"></div>
+
+  <div class="trans-total"> <p>Total Amount:</p><strong>$<%= purchase.amount %></strong></div>
+</div>

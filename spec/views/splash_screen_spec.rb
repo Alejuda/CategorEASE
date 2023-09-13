@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe 'splash_screen', type: :system do
   describe 'Splash Screen' do
-
     before do
       visit groups_path
     end

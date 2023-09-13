@@ -7,7 +7,7 @@ RSpec.describe Group, type: :model do
   end
 
   let!(:group) do
-    Group.create(name: 'Supermarket', icon: "https://icons.com", author: user)
+    Group.create(name: 'Supermarket', icon: 'https://icons.com', author: user)
   end
 
   context 'Validation' do

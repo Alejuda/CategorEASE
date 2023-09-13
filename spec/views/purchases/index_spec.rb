@@ -32,7 +32,7 @@ RSpec.describe 'group/index', type: :system do
     it 'displays the group info' do
       expect(page).to have_content(group1.name)
 
-      expect(page).to have_content("TOTAL")
+      expect(page).to have_content('TOTAL')
       expect(page).to have_content(group1.total_amount)
     end
 
